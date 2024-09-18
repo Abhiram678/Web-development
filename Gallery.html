@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gallery</title>
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .gallery-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .gallery-heading {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .gallery-item {
+      flex: 0 0 auto;
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Media queries for responsive design */
+    @media screen and (max-width: 768px) {
+      .gallery-item {
+        width: calc(50% - 10px);
+        height: 150px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .gallery-item {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gallery-container">
+    <h2 class="gallery-heading">Gallery</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="IMAGES/g1.jpeg" alt="Image 1">
+      </div>
+      <div class="gallery-item">
+        <img src="IMAGES/g2.jpeg" alt="Image 2">
+      </div>
+      <div class="gallery-item">
+        <img src="IMAGES/g3.jpeg" alt="Image 3">
+      </div>
+      <div class="gallery-item">
+        <img src="IMAGES/g4.jpeg" alt="Image 4">
+      </div>
+      <div class="gallery-item">
+        <img src="IMAGES/g5.jpeg" alt="Image 5">
+      </div>
+      <div class="gallery-item">
+        <img src="IMAGES/g6.jpeg" alt="Image 5">
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

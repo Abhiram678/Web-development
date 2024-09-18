@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+  #food {
+    /* Styles for the food section */
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .discount-message {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    background-color: #5d041a;
+    ;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    /* Set a higher z-index value */
+  }
+
+  .marquee-container {
+    overflow: hidden;
+    margin-bottom: 20px;
+    /* Add some spacing below the marquee */
+  }
+
+  .marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marqueeScroll 15s linear infinite;
+  }
+
+  @keyframes marqueeScroll {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .food-menu {
+    /* Styles for the food menu container */
+    text-align: center;
+  }
+
+  .food-menu h2 {
+    /* Styles for the heading */
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .menu-items {
+    /* Styles for the menu items container */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .menu-item {
+    /* Styles for each menu item */
+    width: calc(20% - 20px);
+    /* Adjust the width to fit five items in a row with some spacing between */
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+
+  .menu-item:hover {
+    /* Styles for each menu item on hover */
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-item .item-image {
+    /* Styles for the menu item image container */
+    width: 100%;
+    height: 200px;
+    /* Adjust the height as needed */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+    border: 4px solid #fff;
+    box-sizing: border-box;
+  }
+
+  .menu-item .item-image img {
+    /* Styles for the menu item image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .menu-item .item-image:hover {
+    /* Styles for the menu item image container on hover */
+    transform: scale(1.1);
+  }
+
+  .menu-item .item-image:before {
+    /* Styles for the color overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .menu-item:hover .item-image:before {
+    /* Styles for the color overlay on hover */
+    opacity: 1;
+  }
+
+  .menu-item:nth-child(5n+1) {
+    margin-right: 0;
+  }
+
+  .menu-item:nth-child(5n) {
+    margin-left: 0;
+  }
+
+
+  .menu-item .item-details {
+    /* Styles for the menu item details */
+    padding: 20px;
+  }
+
+  .menu-item .item-details h3 {
+    /* Styles for the item title */
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .menu-item .item-details p {
+    /* Styles for the item description */
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .menu-item .item-details .price {
+    /* Styles for the item price */
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .menu-item .item-details .button {
+    /* Styles for the item button */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5d041a;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .menu-item .item-details .button:hover {
+    /* Styles for the item button on hover */
+    background-color: #5d041a;
+  }
+
+  .footer {
+    background-color: #5d041a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer p {
+    margin: 0;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .related-queries {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .related-queries p {
+    margin: 5px;
+  }
+
+  .city-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .city-list li {
+    margin: 0 10px;
+    list-style: none;
+  }
+
+  body {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<body>
+
+  <div class="nav-bar">
+    <div class="logo">
+      <img src="IMAGES/thalappakatti-logo-anim.gif" width="60px">
+    </div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Location.html">Locations</a></li>
+        <li><a href="Contacts.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <section id="food">
+    <div class="food-menu">
+      <h2>Our Food</h2>
+      <div class="marquee-container">
+        <div class="marquee-content">
+          <span class="discount-message">Limited Time Offer: Get 20% off on all orders!</span>
+        </div>
+      </div>
+      <div class="menu-items">
+        <a href="IMAGES/menuliststarter.html">
+          <div class="menu-item">
+            <div class="item-image">
+              <img src="photoooos/soups.jpeg" alt="Food 1">
+            </div>
+            <div class="item-details">
+              <h3><b>Soup</b></h3>
+              <p>Description of Food 1</p>
+              <p class="price">Starting at RS.119.99</p>
+              <a href="#" class="button">Add to Cart</a>
+        </a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="photoooos/veg-starter.jpeg" alt="Food 2">
+      </div>
+      <div class="item-details">
+        <h3>Veg Starters</h3>
+        <p>Description of Food 2</p>
+        <p class="price">Starting at Rs.179.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="photoooos/mutton -starter.jpeg" alt="Food 3">
+      </div>
+      <div class="item-details">
+        <h3>Non-Veg Starters</h3>
+        <p>Description of Food 3</p>
+        <p class="price">Starting at Rs.209.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="photoooos/seafood-starter.jpeg" alt="Food 4">
+      </div>
+      <div class="item-details">
+        <h3>Seafood Starters</h3>
+        <p>Description of Food 4</p>
+        <p class="price">Starting at Rs.249.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="photoooos/paneerbiryani..jpg" alt="Food 5">
+      </div>
+      <div class="item-details">
+        <h3>Veg Biryani Cuisine</h3>
+        <p>Description of Food 5</p>
+        <p class="price">Starting at Rs.239.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="photoooos/chickenbiryani111.jpg" alt="Food 6">
+      </div>
+      <div class="item-details">
+        <h3>Non-Veg Biryani Cuisine</h3>
+        <p>Description of Food 6</p>
+        <p class="price">Starting at Rs.269.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="photoooos/veg-curry.jpeg" alt="Food 7">
+      </div>
+      <div class="item-details">
+        <h3>Veg Gravy</h3>
+        <p>Description of Food 7</p>
+        <p class="price">Starting at Rs.219.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="photoooos/nv-curry.jpeg" alt="Food 8">
+      </div>
+      <div class="item-details">
+        <h3>Non-Veg Gravy</h3>
+        <p>Description of Food 8</p>
+        <p class="price">Starting at Rs.249.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="IMAGES/naan.jpg" alt="Food 9">
+      </div>
+      <div class="item-details">
+        <h3>Indian Breads</h3>
+        <p>Description of Food 9</p>
+        <p class="price">Starting at Rs.44.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="photoooos/grill.jpeg" alt="Food 10">
+      </div>
+      <div class="item-details">
+        <h3>Grill Items</h3>
+        <p>Description of Food 10</p>
+        <p class="price">Starting at Rs.179.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="photoooos/noodles.jpeg" alt="Food 11">
+      </div>
+      <div class="item-details">
+        <h3>Chinese</h3>
+        <p>Description of Food 11</p>
+        <p class="price">Starting at Rs.199.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="photoooos/bucket-biryani.jpeg" alt="Food 12">
+      </div>
+      <div class="item-details">
+        <h3>Bucket Biryani</h3>
+        <p>Description of Food 12</p>
+        <p class="price">Starting at Rs.299.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="photoooos/gulab-jamun.jpeg" alt="Food 13">
+      </div>
+      <div class="item-details">
+        <h3>Deserts</h3>
+        <p>Description of Food 13</p>
+        <p class="price">Starting at Rs.84.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-image">
+        <img src="IMAGES/icecream.jpg" alt="Food 14">
+      </div>
+      <div class="item-details">
+        <h3>Ice Creams</h3>
+        <p>Description of Food 14</p>
+        <p class="price">Starting at Rs.149.99</p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <div class="footer">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/yourrestaurant" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="https://twitter.com/yourrestaurant" target="_blank"><i class="fa fa-twitter"></i></a>
+    </div>
+
+    <div class="related-queries">
+      <p>Related queries:</p>
+      <p>Special offers</p>
+      <p>Reservation inquiries</p>
+      <p>Menu options</p>
+      <p>Event bookings</p>
+    </div>
+
+    <ul class="city-list">
+      <li>Chennai</li>
+      <li>Rajahmundry</li>
+      <li>Vijayawada</li>
+      <li>Solapur</li>
+      <li>Pune</li>
+    </ul>
+
+    <p>&copy; 2023 Restaurant Website. All rights reserved.</p>
+  </div>
+
+</body>
+
+</html>

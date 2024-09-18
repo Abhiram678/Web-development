@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .menu-list {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .food-item:hover .food-image {
+    transform: scale(1.1); /* Increase the size of the image on hover */
+}
+
+.food-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s; /* Add transition for smooth hover effect */
+}
+
+        .section-title {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .category-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center; 
+                        }
+        
+
+        .food-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .food-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .food-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .food-image-wrapper {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .food-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .food-details {
+            flex: 1;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .food-name {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .additional-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 10px;
+            color: #ff0000; /* Red color for the cost */
+        }
+
+        .ratings {
+            font-size: 14px;
+            color: #fbc02d;
+            display: flex;
+            align-items: center;
+        }
+
+        .ratings::before {
+            content: '\2605';
+            margin-right: 5px;
+        }
+
+        .add-to-cart {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        /* Background Designs */
+        .menu-list {
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="menu-list">
+        <h2 class="section-title">Menu</h2>
+        <div class="category">
+            <h3 class="category-title">Starters</h3>
+
+            <ul class="food-list">
+                <li class="food-item">
+                    <div class="food-image-wrapper">
+                        <img src="paneer-tikka.jpeg" alt="Food 1" class="food-image">
+                    </div>
+                    
+                    <div class="food-details">
+                        <h4 class="food-name">Paneer Tikka</h4>
+                        <div class="additional-info">
+                            <span class="price">Rs.250.00</span>
+                            <span class="ratings">4.5/5</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </li>
+                <li class="food-item">
+                    <div class="food-image-wrapper">
+                        <img src="chicken-65.jpeg" alt="Food 2" class="food-image">
+                    </div>   
+                    <div class="food-details">
+                        <h4 class="food-name">Chicken 65 (550gms+coke)</h4>
+                        <div class="additional-info">
+                            <span class="price">Rs.280.00</span>
+                            <span class="ratings">4.7/5</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                     
+                    <li class="food-item">
+                        <div class="food-image-wrapper">
+                            <img src="chilli-chicken.jpeg" alt="Food 2" class="food-image">
+                        </div>   
+                    <div class="food-details">
+                        <h4 class="food-name">Chilli Chicken(550gms+coke)</h4>
+                        <div class="additional-info">
+                            <span class="price">Rs.280.00</span>
+                            <span class="ratings">4.7/5</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                     
+                    <li class="food-item">
+                        <div class="food-image-wrapper">
+                            <img src="mutton-sukka.jpeg" alt="Food 2" class="food-image">
+                        </div>   
+                    <div class="food-details">
+                        <h4 class="food-name">Mutton Sukka</h4>
+                        <div class="additional-info">
+                            <span class="price">Rs.300.00</span>
+                            <span class="ratings">4.5/5</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+
+                    <li class="food-item">
+                        <div class="food-image-wrapper">
+                            <img src="panner65.jpeg" alt="Food 2" class="food-image">
+                        </div>   
+                    <div class="food-details">
+                        <h4 class="food-name">Paneer 65</h4>
+                        <div class="additional-info">
+                            <span class="price">Rs.285.00</span>
+                            <span class="ratings">4.6/5</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+
+                    <li class="food-item">
+                        <div class="food-image-wrapper">
+                            <img src="seafood-starter.jpeg" alt="Food 2" class="food-image">
+                        </div>   
+                    <div class="food-details">
+                        <h4 class="food-name">Prawn Fry</h4>
+                        <div class="additional-info">
+                            <span class="price">Rs.340.00</span>
+                            <span class="ratings">4.2/5</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h3 class="category-title">Biryani Cusinine</h3>
+            <ul class="food-list">
+                <li class="food-item">
+                    <div class="food-image-wrapper">
+                        <img src="paneerbiryani..jpg" alt="Food 3" class="food-image">
+                    </div>
+                    <div class="food-details">
+                        <h4 class="food-name">Panner Biryani</h4>
+                        <div class="additional-info">
+                            <span class="price">Rs.250.00</span>
+                            <span class="ratings">4.8/5</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </li>
+
+                <li class="food-item">
+                    <div class="food-image-wrapper">
+                        <img src="chickenbiryani111.jpg" alt="Food 4" class="food-image">
+                    </div>
+                    <div class="food-details">
+                        <h4 class="food-name">Chicken Biryani</h4>
+                        <div class="additional-info">
+                            <span class="price">Rs,300.00</span>
+                            <span class="ratings">4.6/5</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

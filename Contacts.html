@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    body {
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+      color: black;
+    }
+  
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: transparent;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-rows: auto auto auto auto;
+      gap: 20px;
+      align-content: start;
+    }
+  
+    .contact-details p {
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+  
+    .contact-details strong {
+      font-weight: bold;
+    }
+  
+    .reach-us h3 {
+      margin-bottom: 10px;
+    }
+  
+    .locations {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      list-style-type: none;
+      color: black;
+    }
+  
+    .location {
+      flex: 1 1 50%;
+      margin-bottom: 20px;
+    }
+  
+    .location p {
+      margin-bottom: 5px;
+    }
+  
+    .contact-options {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+  
+    .contact-option {
+      flex: 1 1 50%;
+      margin-bottom: 10px;
+    }
+  
+    .contact-option p {
+      margin-bottom: 5px;
+    }
+  
+    .social-media {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .social-media a {
+      display: inline-block;
+      margin-right: 10px;
+      color: black;
+    }
+  
+    .social-media a:hover {
+      color: #ff6600;
+    }
+  
+    .social-media i {
+      font-size: 24px;
+      color: #ff6600;
+    }
+    .reach-us {
+  grid-column: 2; /* Align to the second grid column */
+}
+
+.reach-us h3 {
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #5d041a;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #5d041a;
+}
+
+  </style>
+  
+</head>
+
+<body>
+  <div class="nav-bar">
+    <div class="logo">
+      <img src="IMAGES/thalappakatti-logo-anim.gif" width="60px">
+    </div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+        <li><a href="Menu.html">Menu</a></li>
+        <li><a href="Location.html">Locations</a></li>
+        <li><a href="Contacts.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="contact-container">
+    <div class="contact-details">
+      <h2 class="contact-heading">Contact Us</h2>
+      <p><strong>CORPORATE OFFICE</strong></p>
+      <p>Thalappakatti Hotels Pvt Ltd.,</p>
+      <p>No. 25/30, Fourth floor, Ramky House,</p>
+      <p>Hennur Outer Ring Rd, Kalyan Nagar,</p>
+      <p>Bengaluru, Karnataka – 600 016.</p>
+      <p>Email-Id: <a href="mailto:feedback@thalappakatti.com">feedback@thalappakatti.com</a></p>
+    </div>
+    <div class="reach-us">
+      <h3>Reach Us</h3>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="contact" placeholder="Your Contact Number" required>
+        <input type="text" name="company" placeholder="Your Company" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+    <ul class="locations">
+    
+        <li class="location">
+          <p><strong>Chennai</strong></p>
+          <p>123 ABC Street, Chennai, Tamil Nadu, 600001</p>
+          <p>Phone: 123-456-7890</p>
+        </li>
+        <li class="location">
+          <p><strong>Kollam</strong></p>
+          <p>456 XYZ Road, Kollam, Kerala, 691001</p>
+          <p>Phone: 234-567-8901</p>
+        </li>
+        <li class="location">
+          <p><strong>Coimbatore</strong></p>
+          <p>789 PQR Avenue, Coimbatore, Tamil Nadu, 641002</p>
+          <p>Phone: 345-678-9012</p>
+        </li>
+        <li class="location">
+          <p><strong>Solapur</strong></p>
+          <p>321 MNO Lane, Solapur, Maharashtra, 413001</p>
+          <p>Phone: 456-789-0123</p>
+        </li>
+        <li class="location">
+          <p><strong>Pune</strong></p>
+          <p>987 DEF Road, Pune, Maharashtra, 411001</p>
+          <p>Phone: 567-890-1234</p>
+        </li>
+        <li class="location">
+          <p><strong>Rajahmundry</strong></p>
+          <p>654 GHI Street, Rajahmundry, Andhra Pradesh, 533101</p>
+          <p>Phone: 678-901-2345</p>
+        </li>
+      </ul>
+      
+    <div class="contact-options">
+      <div class="contact-option">
+        <h3>Business Inquiries</h3>
+        <p>Email: <a href="mailto:inquiries@thalappakatti.com">inquiries@thalappakatti.com</a></p>
+        <p>Phone: 123-456-7890</p>
+      </div>
+      <div class="contact-option">
+        <h3>Customer Support</h3>
+        <p>Email: <a href="mailto:support@thalappakatti.com">support@thalappakatti.com</a></p>
+        <p>Phone: 234-567-8901</p>
+      </div>
+    </div>
+    <div class="social-media">
+      <a href="https://www.facebook.com/DindigulThalappakatti?mibextid=ZbWKwL" class="social-link"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/Thalappakatti" class="social-link"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/dindigulthalappakatti_?igshid=MzRlODBiNWFlZA==" class="social-link"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/dindigul-thalappakatti-restaurant/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://youtube.com/@ThalappakattiRestaurant" class="social-link"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/yourrestaurant" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="https://twitter.com/yourrestaurant" target="_blank"><i class="fa fa-twitter"></i></a>
+    </div>
+
+    <div class="related-queries">
+      <p>Related queries:</p>
+      <p>Special offers</p>
+      <p>Reservation inquiries</p>
+      <p>Menu options</p>
+      <p>Event bookings</p>
+    </div>
+
+    <ul class="city-list">
+      <li>Chennai</li>
+      <li>Rajahmundry</li>
+      <li>Vijayawada</li>
+      <li>Solapur</li>
+      <li>Pune</li>
+    </ul>
+
+    <p>&copy; 2023 Restaurant Website. All rights reserved.</p>
+  </div>
+
+</body>
+
+</html>
